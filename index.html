@@ -18,18 +18,24 @@
         <main>
             <h2>Instructions</h2>
                 <p>place holder</p>
+            
+                <button onclick="crystalClick">Crystal 1</button>
+                <button onclick="crystalClick">Crystal 2</button>
+                <button onclick="crystalClick">Crystal 3</button>
+                <button onclick="crystalClick">Crystal 4</button>
+
         </main>
 
         <script type="text/javascript">
 
-            //need to assign variables to the computer
-            var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
+            //assign variables to the computer
+            // var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
 
-            //assign random numbers for crystals
-            var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            // //assign random numbers for crystals
+            // var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
-            //onclick will need to catch which crystal is being clicked
-            var playerGuess,
+            // //onclick will need to catch which crystal is being clicked
+            // var playerGuess,
 
             //will need randomizer for computerGuess
 
@@ -38,6 +44,10 @@
             //image needed for each crystal (total of 4)
 
             //crystals will need to be clickable
+            function onclick(){
+                var crystalClick = document.getElementById("crystalClick").innerHTML = 
+                "You Clicked!";
+            }
 
             //will need randomizer for crystals for their points value from player at all times
 
