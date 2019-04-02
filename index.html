@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Crystal Collector</title>
         <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     </head>
 
@@ -19,53 +20,76 @@
             <h2>Instructions</h2>
                 <p>place holder</p>
             
-                <button onclick="crystalClick">Crystal 1</button>
-                <button onclick="crystalClick">Crystal 2</button>
-                <button onclick="crystalClick">Crystal 3</button>
-                <button onclick="crystalClick">Crystal 4</button>
+            <h5>Can you add your numbers up to total my number? <span id="computerOutput"></span></h5>
+
+                <button id="crystalClick">Crystal 1</button>
+                <button id="crystalClick2">Crystal 2</button>
+                <button id="crystalClick3">Crystal 3</button>
+                <button id="crystalClick4">Crystal 4</button>
+            
+            <h5>My total: <span id="crystals"></span></h5>
 
         </main>
 
         <script type="text/javascript">
 
-            //assign variables to the computer
-            var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
-                var computerChoice = Math.floor(Math.random() * computerGuess.length);
-            // //assign random numbers for crystals
-            // var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-            // //onclick will need to catch which crystal is being clicked
-            // var playerGuess,
+            $(document).ready(function() {
+                //assign variables to the computer and make an array of "guesses"
+                var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
+                    //randomizer for the computer guesses
+                    var computerChoice = Math.floor(Math.random() * computerGuess.length);
+                    console.log(computerChoice);
+                    document.getElementById("computerOutput").innerHTML = computerChoice;
 
-            //will need randomizer for computerGuess
+                //assign variables to the crystals that the user will click
+                var crystalValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    //randomizer for the crystals
+                    var playerChoice = Math.floor(Math.random() * crystalValues.length);
+                    console.log(playerChoice);
+                    document.getElementById("crystals").innerHTML = playerChoice;
+                // //onclick will need to catch which crystal is being clicked
 
-            //document the random number for computerGuess on the screen
+                // var playerGuess,
 
-            //image needed for each crystal (total of 4)
+                //will need randomizer for computerGuess
 
-            //crystals will need to be clickable
-            function onclick(){
-                var crystalClick = document.getElementById("crystalClick").innerHTML = 
-                "You Clicked!";
-            }
+                //document the random number for computerGuess on the screen
 
-            //will need randomizer for crystals for their points value from player at all times
+                //image needed for each crystal (total of 4)
 
-            //random crystal points value will be hidden at all times from player
+                //crystals will need to be clickable
+                
+                $("#crystalClick").on("click", function(){
+                    alert("I've been clicked!");
+                });
+                $("#crystalClick2").on("click", function(){
+                    alert("I've been clicked!");
+                });
+                $("#crystalClick3").on("click", function(){
+                    alert("I've been clicked!");
+                });
+                $("#crystalClick4").on("click", function(){
+                    alert("I've been clicked!");
+                });
 
-            //keep calculated score of player (as they click the crystal show value and keep score)
+                //will need randomizer for crystals for their points value from player at all times
 
-            //when players score matches the computers random score tally 1 for win
+                //random crystal points value will be hidden at all times from player
 
-            //when players score totals more than computers random score tally 1 for loss
+                //keep calculated score of player (as they click the crystal show value and keep score)
 
-            //when player wins - new random number for computer is generated
+                //when players score matches the computers random score tally 1 for win
 
-            //each crystal obtains new random number when player wins
+                //when players score totals more than computers random score tally 1 for loss
 
-            //each crystal obtains new random number when player loses
+                //when player wins - new random number for computer is generated
 
-            //
+                //each crystal obtains new random number when player wins
 
+                //each crystal obtains new random number when player loses
+
+                //
+            });
 
         </script>
 
