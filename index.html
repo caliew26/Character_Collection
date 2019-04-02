@@ -16,24 +16,31 @@
             <h1>Character Collector</h1>
         </header>
 
-        <main>
-            <h2>Can you click the characters and match the number I provide?</h2>
-                <p>place holder</p>
+        <div class="container">
+            <h2>Click the characters and match the number I provide!</h2>
+                <p>Object of the game is to click on the characters to get a value, and add the values together to match the number I give you (will be between 19-121).  Each character will be worth a different value between 1 and 12.</p>
             
-            <h5>Can you add your numbers up to total my number? <span id="computerOutput"></span></h5>
+            <div class="computerRandomGuess">
+                <h5>Can you add your numbers up to total my number? <span id="computerOutput"></span></h5>
+            </div>
 
-                <button id="crystalClick">Character 1</button>
-                <button id="crystalClick2">Character 2</button>
-                <button id="crystalClick3">Character 3</button>
-                <button id="crystalClick4">Character 4</button>
-            
-            <h5>My total: <span id="crystals"></span></h5>
+            <div class="characters">
+                <button id="characterClick">Mickey</button>
+                <button id="characterClick2">Minnie</button>
+                <button id="characterClick3">Goofy</button>
+                <button id="characterClick4">Donald</button>
+            </div>
 
-        </main>
+            <div class="playerCharacterGuess">
+                <h5>My total: <span id="characters"></span></h5>
+            </div>
+
+        </div>
 
         <script type="text/javascript">
 
             $(document).ready(function() {
+
                 //assign variables to the computer and make an array of "guesses"
                 var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
                     //randomizer for the computer guesses
@@ -42,65 +49,63 @@
                     //document the random number for computerGuess on the screen
                     document.getElementById("computerOutput").innerHTML = computerChoice;
 
-                //assign variables to the crystals and make an array of "guesses"
-                var crystalValues1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //randomizer for the crystals
-                    var playerChoice1 = crystalValues1[Math.floor(Math.random() * crystalValues1.length)];
+                //assign variables to the characters and make an array of "guesses"
+                var characterValues1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    //randomizer for the characters
+                    var playerChoice1 = characterValues1[Math.floor(Math.random() * characterValues1.length)];
                     console.log(playerChoice1);
-                    document.getElementById("crystals").innerHTML = playerChoice1;
+                    document.getElementById("characters").innerHTML = playerChoice1;
 
-                var crystalValues2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for crystals for their points value from player at all times
-                    var playerChoice2 = crystalValues2[Math.floor(Math.random() * crystalValues2.length)];
+                var characterValues2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    //will need randomizer for characters for their points value from player at all times
+                    var playerChoice2 = characterValues2[Math.floor(Math.random() * characterValues2.length)];
                     console.log(playerChoice2);
-                    document.getElementById("crystals").innerHTML = playerChoice2;
+                    document.getElementById("characters").innerHTML = playerChoice2;
 
-                var crystalValues3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for crystals for their points value from player at all times
-                    var playerChoice3 = crystalValues3[Math.floor(Math.random() * crystalValues3.length)];
+                var characterValues3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    //will need randomizer for characters for their points value from player at all times
+                    var playerChoice3 = characterValues3[Math.floor(Math.random() * characterValues3.length)];
                     console.log(playerChoice3);
-                    document.getElementById("crystals").innerHTML = playerChoice3;
+                    document.getElementById("characters").innerHTML = playerChoice3;
 
-                var crystalValues4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for crystals for their points value from player at all times
-                    var playerChoice4 = crystalValues4[Math.floor(Math.random() * crystalValues4.length)];
+                var characterValues4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                    //will need randomizer for characters for their points value from player at all times
+                    var playerChoice4 = characterValues4[Math.floor(Math.random() * characterValues4.length)];
                     console.log(playerChoice4);
-                    document.getElementById("crystals").innerHTML = playerChoice4;
+                    document.getElementById("characters").innerHTML = playerChoice4;
 
+                    //keep track of player wins
                 var playerWins = 0;
+                    //keep track of player losses
                 var playerLoss = 0;
+                    //keep track of playerCharacterGuess
+                    //will need to increase with every click based on the character clicked and their assigned random number
+                var counter = 0;
 
-                // //crystals will need to be clickable
-                // $("#crystalClick").on("click", function(){
-                //     alert("I've been clicked!");
-                // });
-                // $("#crystalClick2").on("click", function(){
-                //     alert("I've been clicked!");
-                // });
-                // $("#crystalClick3").on("click", function(){
-                //     alert("I've been clicked!");
-                // });
-                // $("#crystalClick4").on("click", function(){
-                //     alert("I've been clicked!");
-                // });
 
-                //onclick will need to catch which crystal is being clicked
-                // if(crystalClick1){
-                //     document.getElementById("crystals").innerHTML = crystalValues1.length;
+                //characters will need to be clickable
+                $("#characterClick").on("click", function(){
+                    alert("You've Clicked Mickey");
+                });
+                $("#characterClick2").on("click", function(){
+                    alert("You've Clicked MInnie");
+                });
+                $("#characterClick3").on("click", function(){
+                    alert("You've Clicked Goofy");
+                });
+                $("#characterClick4").on("click", function(){
+                    alert("You've Clicked Donald");
+                });
+
+                // if(counter === computerChoice){
+                //     document.getElementById(characters).innerHTML = playerWins++;
                 // }
-                // if(crystalClick2){
-                //     document.getElementById("crystalClick").innerHTML = crystalValues2.length;
-                // }
-                // if(crystalClick3){
-                //     document.getElementById("crystalClick").innerHTML = crystalValues3.length;
-                // }
-                // if(crystalClick4){
-                //     document.getElementById("crystalClick").innerHTML = crystalValues4.length;
-                // }
+
+                //onclick will need to catch which character is being clicked
 
                 //image needed for each crystal (total of 4)
 
-                //random crystal points value will be hidden at all times from player
+                //random character points value will be hidden at all times from player
 
                 //keep calculated score of player (as they click the crystal show value and keep score)
 
@@ -110,9 +115,9 @@
 
                 //when player wins - new random number for computer is generated
 
-                //each crystal obtains new random number when player wins
+                //each character obtains new random number when player wins
 
-                //each crystal obtains new random number when player loses
+                //each character obtains new random number when player loses
 
                 //
             });
