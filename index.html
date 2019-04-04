@@ -61,31 +61,31 @@
                 //assign variables to the characters and make an array of "guesses"
                 var characterValues1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     //randomizer for the characters
-                    var playerChoice1 = characterValues1[Math.floor(Math.random() * characterValues1.length)];
-                    console.log(playerChoice1);
-                    //random character points value will need to be hidden at all times from player
-                    document.getElementById("characters").innerHTML = playerChoice1;
+                    // var playerChoice = characterValues1[Math.floor(Math.random() * characterValues1.length)];
+                    // console.log(playerChoice);
+                    // //random character points value will need to be hidden at all times from player
+                    // document.getElementById("characters").innerHTML = playerChoice();
 
-                var characterValues2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                var characterValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     //randomizer for the characters
-                    var playerChoice2 = characterValues2[Math.floor(Math.random() * characterValues2.length)];
-                    console.log(playerChoice2);
+                    // var playerChoice = characterValues2[Math.floor(Math.random() * characterValues2.length)];
+                    // console.log(playerChoice);
                     //random character points value will need to be hidden at all times from player
-                    document.getElementById("characters").innerHTML = playerChoice2;
+                    // document.getElementById("characters").innerHTML = playerChoice();
 
-                var characterValues3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                var characterValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     //randomizer for the characters
-                    var playerChoice3 = characterValues3[Math.floor(Math.random() * characterValues3.length)];
-                    console.log(playerChoice3);
+                    // var playerChoice = characterValues3[Math.floor(Math.random() * characterValues3.length)];
+                    // console.log(playerChoice3);
                     //random character points value will need to be hidden at all times from player
-                    document.getElementById("characters").innerHTML = playerChoice3;
+                    // document.getElementById("characters").innerHTML = playerChoice();
 
-                var characterValues4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                var playerChoice = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
                     //randomizer for the characters
-                    var playerChoice4 = characterValues4[Math.floor(Math.random() * characterValues4.length)];
-                    console.log(playerChoice4);
-                    //random character points value will need to be hidden at all times from player
-                    document.getElementById("characters").innerHTML = playerChoice4;
+                    // var playerChoice = characterValues4[Math.floor(Math.random() * characterValues4.length)];
+                    // console.log(playerChoice);
+                    // //random character points value will need to be hidden at all times from player
+                    // document.getElementById("characters").innerHTML = playerChoice();
 
                     //keep track of player wins
                 var playerWins = 0;
@@ -96,6 +96,9 @@
                     //counter will need to increase with every click based on the character clicked and their assigned random number
                 var counter = 0;
 
+                var playerChoice = function(){
+                    playerChoice = characterValue[Math.floor(Math.random() * characterValue.length)];
+                }
                 //will I need to create an array of clicks?
                 // var playerClick = [];
 
@@ -106,9 +109,9 @@
                 //image needed for each character (total of 4)
                 $("#characterClick").on("click", function(){
                     //when the character is clicked need to pull the random number from playerChoice(s) above
-                    playerChoice1 + "#characters"
+                    return playerChoice + "#characters"
                     //then add the random number to the running total (#characters)
-                    console.log(character);
+                    document.getElementById("characters").innerHTML = playerChoice();
                 });
                 $("#characterClick2").on("click", function(){
                     alert("You've Clicked MInnie");
@@ -138,7 +141,7 @@
                 } else {
                     for (var i = 1; i < computerChoice; i++ ) {
                     console.log[i];
-                    //document.getElementById(characters).innerHTML = #characters++;
+                    document.getElementById("characters").innerHTML = playerChoice ;
                     //new random number for computer is generated
                     //reset function will need to be created and input here
                 }}
