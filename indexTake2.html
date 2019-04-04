@@ -13,95 +13,36 @@
 
     <body>
 
-        <header class="col col-md-6">
-            <h1>Character Collector</h1>
-        </header>
+        <div class="col col-md-4 col-lg-6">
+            <button type="button" class="btn-success characterClick" value="1">Mickey</button>
+            <button type="button" class="btn-success characterClick" value="2">Minnie</button>
+            <button type="button" class="btn-success characterClick" value="3">Goofy</button>
+            <button type="button" class="btn-success characterClick" value="4">Donald</button>
+        </div>
 
-        <div class="col ol-lg-6">
-            <h2>Click the characters and match the number I provide!</h2>
-                <p>Object of the game is to click on the characters to get a value, and add the values together to match the number I give you (will be between 19-121).  Each character will be worth a different value between 1 and 12.</p>
-            
-            <div class="col-md-6">
-                <h5>Can you add your numbers up to total my number? <span id="computerOutput"></span></h5>
-            </div>
-
-            <div class="col col-md-4 col-lg-6">
-                <button type="button" class="btn-success" id="characterClick1">Mickey</button>
-                <button type="button" class="btn-success" id="characterClick2">Minnie</button>
-                <button type="button" class="btn-success" id="characterClick3">Goofy</button>
-                <button type="button" class="btn-success" id="characterClick4">Donald</button>
-            </div>
-
-            <div class="col-lg-6">
-                <h5>My total: <span id="playerOutput"></span></h5>
-            </div>
-
-            <div class="col-lg-6">
-                <h3>Wins</h3>
-            </div>
-
-            <div class="col-lg-6">
-                <h3>Losses</h3>
-            </div>
-
+        <div class="col-lg-6">
+            <h5>My count: <span id="characterCounter"></span></h5>
         </div>
 
         <script type="text/javascript">
 
             $(document).ready(function() {
 
-                //assign variables to the computer and make an array of "guesses"
-                var computerGuess = [24, 42, 46, 76, 71, 89, 90, 86, 95, 55, 88, 113, 70, 52]
-                  
-                //assign variables to the characters and make an array of "guesses"
-                var characterValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
- 
-                  //randomizer for the computer guesses
-                var computerChoice = computerGuess[Math.floor(Math.random() * computerGuess.length)];
-                    console.log("computer:" + computerChoice);
-                //document the random number for computerGuess on the screen
-                document.getElementById("computerOutput").innerHTML = computerChoice;
+                var computerNumber = [19, 20, 21, 22, 23, 24, 25, 26, 55, 56, 57, 58, 69, 70, 83, 84, 85, 99, 101, 100, 103, 112, 114, 120];
+                var Win = 0;
+                var Loss = 0;
+                var characterClick = "";
+                var characterCounter = [];
+            
 
-                var playerChoice = characterValue[Math.floor(Math.random() * characterValue.length)];
-                    console.log("player:" + playerChoice);
-
-                function playerChoice(element){
-                    alert(element.id);
-                }
-
-                $("#characterClick1").on("click", function(){
-                    
-                    //when the character is clicked need to generate a random number from playerChoice
-                    // return playerChoice + "#characters"
-                    // //then add the random number to the running total (#characters)
-                    document.getElementById("playerOutput").innerHTML = playerChoice;
-                    console.log("player:" + playerChoice);
-
+                $(".characterClick").on("click",function(){
+                    characterClick += this.value;
+                    characterCounter = characterClick + characterCounter;
+                    console.log(characterClick);
                 });
-                $("#characterClick2").on("click", function(){
-                    //when the character is clicked need to generate a random number from playerChoice
-                    // return playerChoice + "#characters"
-                    // //then add the random number to the running total (#characters)
-                    document.getElementById("playerOutput").innerHTML = playerChoice;
-                    console.log("player:" + playerChoice);
 
-                });
-                $("#characterClick3").on("click", function(){
-                    //when the character is clicked need to generate a random number from playerChoice
-                    // return playerChoice + "#characters"
-                    // //then add the random number to the running total (#characters)
-                    document.getElementById("playerOutput").innerHTML = playerChoice;
-                    console.log("player:" + playerChoice);
-
-                });
-                $("#characterClick4").on("click", function(){
-                    //when the character is clicked need to generate a random number from playerChoice
-                    // return playerChoice + "#characters"
-                    // //then add the random number to the running total (#characters)
-                    document.getElementById("playerOutput").innerHTML = playerChoice;
-                    console.log("player:" + playerChoice);
-
-                });
+                
+          
             });
 
         </script>
