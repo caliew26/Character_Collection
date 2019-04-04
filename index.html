@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Character Collector</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -12,27 +13,35 @@
 
     <body>
 
-        <header>
+        <header class="col col-md-6">
             <h1>Character Collector</h1>
         </header>
 
-        <div class="container">
+        <div class="col ol-lg-6" class="container">
             <h2>Click the characters and match the number I provide!</h2>
                 <p>Object of the game is to click on the characters to get a value, and add the values together to match the number I give you (will be between 19-121).  Each character will be worth a different value between 1 and 12.</p>
             
-            <div class="computerRandomGuess">
+            <div class="col-md-6" class="computerRandomGuess">
                 <h5>Can you add your numbers up to total my number? <span id="computerOutput"></span></h5>
             </div>
 
-            <div class="characters">
+            <div class="col col-md-4 characters btn btn-success">
                 <button id="characterClick">Mickey</button>
                 <button id="characterClick2">Minnie</button>
                 <button id="characterClick3">Goofy</button>
                 <button id="characterClick4">Donald</button>
             </div>
 
-            <div class="playerCharacterGuess">
+            <div class="col-lg-6" class="playerCharacterGuess">
                 <h5>My total: <span id="characters"></span></h5>
+            </div>
+
+            <div class="col-lg-6">
+                <h3>Wins</h3>
+            </div>
+
+            <div class="col-lg-6">
+                <h3>Losses</h3>
             </div>
 
         </div>
@@ -54,24 +63,28 @@
                     //randomizer for the characters
                     var playerChoice1 = characterValues1[Math.floor(Math.random() * characterValues1.length)];
                     console.log(playerChoice1);
+                    //random character points value will need to be hidden at all times from player
                     document.getElementById("characters").innerHTML = playerChoice1;
 
                 var characterValues2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for characters for their points value from player at all times
+                    //randomizer for the characters
                     var playerChoice2 = characterValues2[Math.floor(Math.random() * characterValues2.length)];
                     console.log(playerChoice2);
+                    //random character points value will need to be hidden at all times from player
                     document.getElementById("characters").innerHTML = playerChoice2;
 
                 var characterValues3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for characters for their points value from player at all times
+                    //randomizer for the characters
                     var playerChoice3 = characterValues3[Math.floor(Math.random() * characterValues3.length)];
                     console.log(playerChoice3);
+                    //random character points value will need to be hidden at all times from player
                     document.getElementById("characters").innerHTML = playerChoice3;
 
                 var characterValues4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-                    //will need randomizer for characters for their points value from player at all times
+                    //randomizer for the characters
                     var playerChoice4 = characterValues4[Math.floor(Math.random() * characterValues4.length)];
                     console.log(playerChoice4);
+                    //random character points value will need to be hidden at all times from player
                     document.getElementById("characters").innerHTML = playerChoice4;
 
                     //keep track of player wins
@@ -79,13 +92,23 @@
                     //keep track of player losses
                 var playerLoss = 0;
                     //keep track of playerCharacterGuess
-                    //will need to increase with every click based on the character clicked and their assigned random number
+
+                    //counter will need to increase with every click based on the character clicked and their assigned random number
                 var counter = 0;
 
+                //will I need to create an array of clicks?
+                // var playerClick = [];
 
+                //reset function will need to be created here
+
+                //onclick will need to catch which character is being clicked
                 //characters will need to be clickable
+                //image needed for each character (total of 4)
                 $("#characterClick").on("click", function(){
-                    alert("You've Clicked Mickey");
+                    //when the character is clicked need to pull the random number from playerChoice(s) above
+                    playerChoice1 + "#characters"
+                    //then add the random number to the running total (#characters)
+                    console.log(character);
                 });
                 $("#characterClick2").on("click", function(){
                     alert("You've Clicked MInnie");
@@ -97,29 +120,30 @@
                     alert("You've Clicked Donald");
                 });
 
-                // if(counter === computerChoice){
-                //     document.getElementById(characters).innerHTML = playerWins++;
-                // }
-
-                //onclick will need to catch which character is being clicked
-
-                //image needed for each crystal (total of 4)
-
-                //random character points value will be hidden at all times from player
-
-                //keep calculated score of player (as they click the crystal show value and keep score)
-
+                //to keep track of the wins and losses need an if/else statement
                 //when players score matches the computers random score tally 1 for win
+                if(counter === computerChoice){
+                    document.getElementById(characters).innerHTML = playerWins++;
+                    alert("OH BOY! You guessed right! You win!")
+                    //when players score totals more than computers random score tally 1 for loss
+                    //each character obtains new random number when player wins
+                    //new random number for computer is generated
+                    //reset function will need to be created and input here
+                } else if (counter > computerChoice) {
+                    alert("Garsh, you counted too high; you lose.")
+                    document.getElementById(characters).innerHTML = playerLoss++;
+                    //each character obtains new random number when player loses
+                    //new random number for computer is generated
+                    //reset function will need to be created and input here
+                } else {
+                    for (var i = 1; i < computerChoice; i++ ) {
+                    console.log[i];
+                    //document.getElementById(characters).innerHTML = #characters++;
+                    //new random number for computer is generated
+                    //reset function will need to be created and input here
+                }}
 
-                //when players score totals more than computers random score tally 1 for loss
 
-                //when player wins - new random number for computer is generated
-
-                //each character obtains new random number when player wins
-
-                //each character obtains new random number when player loses
-
-                //
             });
 
         </script>
