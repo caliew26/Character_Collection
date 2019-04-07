@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Mickey Collector</title>
+        <title>Character Collector</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
         
@@ -13,33 +13,43 @@
 
     <body>
         
-        <h2>Crystals Collector!</h2>
+        <header class="alert alert-primary" role="alert">Characters Collector!</header>
 
-        <p>You will be given a random number at the start of the game></p>
-        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-        <p>You win teh game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
-        <p>The value of each crystal is hidden from you until you click on it.</p>
-        <p>Each time when the game starts, the game will change the values of each crystal.</p>
-
-        <div>
-            <p id="randomCrystalNumber">0</p>
+        <div class="container">
+            <p>You will be given a random number at the start of the game></p>
+            <p>There are four characters below. By clicking on a character you will add a specific amount of points to your total score.</p>
+            <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+            <p>The value of each character is hidden from you until you click on it, once you click it you will have to remember what value has been assigned to that character.</p>
+            <p>Each time when the game starts, the game will change the values of each character.</p>
+        </div>
+        <div class="main">
+            <p>Match Me!</p>
+            <p id="randomCrystalNumber">Match ME: 0</p>
         </div>
 
         <div>
-            <p>Wins:<span id="wins"></span></p>
+            <h3>Oh Boy! You Won:<span id="wins"></span></h3>
         </div>
         <div>
-            <p>Loss:<span id="losses"></span></p>
+            <h3>Garsh, You Lost:<span id="losses"></span></h3>
         </div>
 
-        <div class="btn btn-danger" id="button" id="redbutton" onclick="buttonClick('red')">Red</div>
-        <div class="btn btn-primary" id="button" id="bluebutton" onclick="buttonClick('blue')">Blue</div>
-        <div class="btn btn-success" id="button" id="greenbutton" onclick="buttonClick('green')">Green</div>
-        <div class="btn btn-warning" id="button" id="yellowbutton" onclick="buttonClick('yellow')">Yellow</div>
+        <div class="btn btn-danger" id="button" id="redbutton" onclick="buttonClick('red')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Mickey_Mouse.png/220px-Mickey_Mouse.png" alt="Mickey Mouse">
+        </div>
+        <div class="btn btn-primary" id="button" id="bluebutton" onclick="buttonClick('blue')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Donald_Duck.svg/220px-Donald_Duck.svg.png" alt="Donald Duck">
+        </div>
+        <div class="btn btn-success" id="button" id="greenbutton" onclick="buttonClick('green')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Goofy.svg/1200px-Goofy.svg.png" alt="Goofy">
+        </div>
+        <div class="btn btn-warning" id="button" id="yellowbutton" onclick="buttonClick('yellow')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Plutodog.gif" alt="Pluto Dog">
+        </div>
 
-        <h4>Your total score is:</h4>
+        <h4 class="score">Your total score is:</h4>
 
-        <div>
+        <div class="score">
             <p id="totalScore">0</p>
         </div>
 
