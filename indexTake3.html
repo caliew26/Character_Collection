@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mickey Collector</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        
+
+    </head>
+
+    <body>
+        
+        <h2>Crystals Collector!</h2>
+
+        <p>You will be given a random number at the start of the game></p>
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <p>You win teh game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+        <div>
+            <p id="randomCrystalNumber">0</p>
+        </div>
+
+        <div>
+            <p>Wins:<span id="wins"></span></p>
+        </div>
+        <div>
+            <p>Loss:<span id="losses"></span></p>
+        </div>
+
+        <div class="btn btn-danger" id="button" id="redbutton" onclick="buttonClick('red')">Red</div>
+        <div class="btn btn-primary" id="button" id="bluebutton" onclick="buttonClick('blue')">Blue</div>
+        <div class="btn btn-success" id="button" id="greenbutton" onclick="buttonClick('green')">Green</div>
+        <div class="btn btn-warning" id="button" id="yellowbutton" onclick="buttonClick('yellow')">Yellow</div>
+
+        <h4>Your total score is:</h4>
+
+        <div>
+            <p id="totalScore">0</p>
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="assets/javascript/gametake2.js">
+        $(document).ready(function() {
+
+        })
+           
+        </script>
+
+    </body>
+</html>

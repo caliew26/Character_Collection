@@ -1,4 +1,25 @@
+* {
+  margin: 20px;
+}
+
+h5 {
+  font-size: 28px;
+  font-family: fantasy;
+  margin: 20px;
+  }
+
+header {
+  color: red;
+  text-align: center;
+  }
+
+ p {
+  color: plum;
+  }
+
 .character-image {
-    width: 300px;
-    height: 300px;
+  width: 75px;
+  height: 75px;
+  border: 2px solid black;
+  padding: 5px;
   }
